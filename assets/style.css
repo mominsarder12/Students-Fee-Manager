@@ -1,0 +1,55 @@
+.sfm-table th,
+.sfm-table td {
+	text-align: center;
+	padding: 8px;
+}
+.sfm-table th {
+	background: #f4f4f4;
+}
+/* view students page css */
+
+.sfm-fee-table {
+	border-collapse: collapse;
+	margin-top: 20px;
+	font-size: 14px;
+	min-width: 100%;
+	border: 1px solid #ddd;
+}
+.sfm-fee-table th,
+.sfm-fee-table td {
+	padding: 5px;
+	text-align: center;
+}
+.sfm-fee-table tbody tr:nth-child(even) td {
+	background: #d3a6a6;
+}
+.sfm-fee-table tbody tr:hover {
+	background: #f1f1f1;
+}
+/* colorized row */
+tr.item-row:nth-child(even) {
+	background: powderblue;
+}
+
+/* #sfm-table.sfm-fee-table tr.item-row:nth-child(even) {
+	background-color: #f9f9f9;
+}
+#sfm-table.sfm-fee-table tr.item-row:nth-child(odd) {
+	background-color: #ffffff;
+}
+#sfm-table.sfm-fee-table th {
+	color: #fff;
+} */
+#sfm-table.sfm-fee-table tr.item-row:nth-child(2) {
+	background: red !important;
+}
+
+/* Number input spinner remove for plugin fields */
+.sfm-input-number::-webkit-inner-spin-button,
+.sfm-input-number::-webkit-outer-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+.sfm-input-number {
+	-moz-appearance: textfield;
+}
