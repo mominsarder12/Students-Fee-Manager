@@ -40,7 +40,7 @@ function sfm_student_payment_callback($post) {
     $payments = get_post_meta($post->ID, '_payments', true);
     if (!is_array($payments)) $payments = [];
 
-    echo '<table class="widefat sfm-fee-table">';
+    echo '<table class="widefat fee-table">';
     echo '<thead><tr><th>Month</th><th>Paid Amount</th></tr></thead><tbody>';
 
     foreach ($months_full as $i => $full) {

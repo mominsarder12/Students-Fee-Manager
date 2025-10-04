@@ -107,13 +107,13 @@ function sfm_manage_fees_page() {
                     foreach ($months_short as $m) {
                         $paid = isset($payments[$m]) ? floatval($payments[$m]) : 0;
                         $cell_style = $paid > 0
-                            ? "background:#d4edda;color:#155724;font-weight:bold;text-align:center;"
-                            : "background:#f8d7da;color:#721c24;text-align:center;";
+                            ? "color:#155724;font-weight:bold;text-align:center;"
+                            : "color:#721c24;text-align:center;";
                         echo "<td style='{$cell_style}'>" . esc_html($paid) . "</td>";
                     }
 
-                    echo "<td style='text-align:center;background:#d4edda;color:#155724;font-weight:bold;'>" . esc_html($total_paid) . "</td>
-          <td style='text-align:center;background:#f8d7da;color:#721c24;font-weight:bold;'>" . esc_html(max($total_due, 0)) . "</td>
+                    echo "<td style='text-align:center;color:#155724;font-weight:bold;'>" . esc_html($total_paid) . "</td>
+          <td style='text-align:center;color:#721c24;font-weight:bold;'>" . esc_html(max($total_due, 0)) . "</td>
     </tr>";
                 }
                 ?>
