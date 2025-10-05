@@ -67,6 +67,7 @@ function sfm_manage_fees_page() {
         <table id="sfm-table" class="widefat sfm-fee-table" style="overflow-x:auto;">
             <thead>
                 <tr>
+                    <th style="background:#555;color:#fff;">SL</th>
                     <th style="background:#333;color:#fff;">Student</th>
                     <th style="background:#555;color:#fff;">Guardian</th>
                     <th style="background:#666;color:#fff;">Contact</th>
@@ -84,8 +85,16 @@ function sfm_manage_fees_page() {
             </thead>
             <tbody>
                 <?php
-                $students = get_posts(['post_type' => 'student', 'numberposts' => -1]);
+                $sl_number = 0;
+                // $students = get_posts(['post_type' => 'student', 'numberposts' => -1]);
+                $students = get_posts([
+                    'post_type'   => 'student',
+                    'numberposts' => -1,
+                    'orderby'     => 'date',
+                    'order'       => 'ASC', // oldest first
+                ]);
                 foreach ($students as $s) {
+                    $sl_number++;
                     $guardian = get_post_meta($s->ID, '_guardian', true);
                     $contact  = get_post_meta($s->ID, '_contact', true);
                     $subject  = get_post_meta($s->ID, '_subject', true);
@@ -98,6 +107,7 @@ function sfm_manage_fees_page() {
                     $total_due  = (12 * floatval($monthly)) - $total_paid;
 
                     echo "<tr class='item-row'>
+        <td>" . esc_html($sl_number) . "</td>
         <td><a href='" . esc_url(get_edit_post_link($s->ID)) . "'><strong>" . esc_html($s->post_title) . "</strong></a></td>
         <td>" . esc_html($guardian) . "</td>
         <td>" . esc_html($contact) . "</td>
